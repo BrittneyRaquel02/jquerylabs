@@ -1,5 +1,9 @@
+
 (function (){
-angular.module('app',[]).controller("ModelController", function(){
+angular
+.module('app',[])
+.controller("ModelController",ModelController)
+ function ModelController(){
   var vm = this;
   vm.listOfItems = [];
   vm.addItem = function(listItem) {
@@ -7,9 +11,12 @@ angular.module('app',[]).controller("ModelController", function(){
     vm.listItem = "";
   }
 
-  function remove(){
-    vm.listItem.splice(this.index, 1);
+  vm.remove =function(){
+    vm.listOfItems.splice(this.index, 1);
   }
 
-});
+};
+
+
 })();
+
