@@ -6,6 +6,8 @@
   <title>TO DO LIST</title>
 </head>
 
+<div>
+  <container>
 <body ng-controller= "ModelController as test">
 <h1> TO DO LIST </h1>
 <h2> A Place To Store Things You Have To Do!</h2>
@@ -13,8 +15,9 @@
 
 <input type= "text" ng-model= "test.listItem" />
 <button ng-click = "test.addItem(test.listItem);">Add</button>
-<p ng-repeat="item in test.listOfItems"> {{item}} <button ng-click = "test.remove()">x</button> </p>
-<input type = "text" ng-model = "test.filter" />
+<p ng-repeat="item in test.listOfItems | filter: test.searchText "> {{item}} <button ng-click = "test.remove()">x</button> </p>
+<!-- <input type = "text" ng-model = "test.filteredItem" | filter/> -->
+<label>Search: <input ng-model="test.searchText"></label>
 
   <!-- <script src="lib/angular.js"></script> -->
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
@@ -22,4 +25,7 @@
   <!-- <script src = "model-controller.js"></script> -->
 
 </body>
+</container>
+</div>
+
 </html>
