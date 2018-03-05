@@ -1,0 +1,6 @@
+
+
+<ul class = "form-item">
+  <li ng-repeat="item in $ctrl.listOfItems | filter: $ctrl.searchText ">  {{item}}
+    <button ng-click = "$ctrl.remove()">x</button> </li>
+<taskList to-dos = $ctrl.toDos></taskList>
